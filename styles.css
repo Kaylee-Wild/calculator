@@ -1,0 +1,35 @@
+.screen {
+    background-color: lightgrey;
+    display: flex;
+}
+
+.del {
+    display: flex;
+}
+
+
+
+.rows {
+    display: flex;
+    justify-content: center;
+}
+
+.firstRow {
+    
+}
+
+.secondRow {
+    
+}
+
+.thirdRow {
+    
+}
+
+.fourthRow {
+    
+}
+
+.fithRow {
+    
+}
