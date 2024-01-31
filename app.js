@@ -1,22 +1,26 @@
+window.onload = function() {
 
 
 
+//instead of finding each number button by each specific ID,
+//use querySelectorAll() to search for all number buttons with
+//the same CSS class to put them in an array
+//then have the function call the items that querySelectorAll() has
+//based on the number button that is clicked
 
-//read more into querySelector
-const number_One = document.getElementById("1");
 
+const numberBtn = document.querySelectorAll("#number");
 
-
-function enterCharacter () {
-
-    const equation = [];
-
-    equation.push(number_One.value);
-
-    console.log(equation);
-
-    result.innerHTML = equation;
+function print() {
+    console.log("you pressed a number");
 }
 
 
-number_One.addEventListener('click', enterCharacter);
+//currently giving error "numberBtn.addEventListener is not a function"
+numberBtn.addEventListener('click',print);
+
+
+
+
+
+}
