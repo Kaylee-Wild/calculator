@@ -30,7 +30,7 @@ numberOneBtn.addEventListener('click',print);
 const displayContainer = document.getElementById('display')
 document.querySelectorAll('button').forEach((item) => {
   item.addEventListener('click', (e) => {
-    displayContainer.innerHTML = e.target.textContent.trim();
+    displayContainer.innerHTML += e.target.textContent.trim();
   })
 })
 
