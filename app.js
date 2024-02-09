@@ -16,7 +16,7 @@ const del = document.querySelector('#del');
 if (del) {
   del.addEventListener('click', (e) => {
 //when del button is pressed, delete the latest character in display
-displayContainer.innerHTML = displayContainer.innerHTML.substring(0,displayContainer.innerHTML.length-1);
+  displayContainer.innerHTML = displayContainer.innerHTML.substring(0,displayContainer.innerHTML.length-1);
   });
 }
 
@@ -26,8 +26,17 @@ of the full equation and print the results on the display*/
 
 
 
-/*when C is pressed, don't print, 
-clear the full equation and display*/
+
+
+const clearAll = document.querySelector('#clear')
+
+if (clearAll) {
+  clearAll.addEventListener('click', (e) => {
+    /*when C is pressed, don't print, clear the display*/
+    displayContainer.innerHTML = displayContainer.innerHTML.replace(/[0-9]/g, '');
+    //removes all numbers from the string globally, next need to get it to remove operators
+  });
+}
 
 
 
