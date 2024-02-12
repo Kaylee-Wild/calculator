@@ -23,9 +23,17 @@ if (del) {
 
 /*when = is pressed, don't print, calculate the results 
 of the full equation and print the results on the display*/
+const equal = document.querySelector('#equal');
 
+if (equal) {
+  equal.addEventListener('click', (e) => {
+    console.log(displayContainer.innerHTML);
 
+    let results = displayContainer.innerHTML
+  })
+}
 
+console.log("2 x 3")
 
 
 const clearAll = document.querySelector('#clear')
@@ -33,7 +41,7 @@ const clearAll = document.querySelector('#clear')
 if (clearAll) {
   clearAll.addEventListener('click', (e) => {
     /*when C is pressed, don't print, clear the display*/
-    displayContainer.innerHTML = displayContainer.innerHTML.replace(/[0-9\+\-\x\%\()\"/"\.]/g, '');
+    displayContainer.innerHTML = displayContainer.innerHTML.replace(displayContainer.innerHTML, '');
   });
 }
 
