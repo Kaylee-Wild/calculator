@@ -13,7 +13,9 @@ body {
 .screen {
     background-color: white;
     padding: 8px;
+    margin: 8px;
     width: 500px;
+    height: 100px;
 }
 
 p {
