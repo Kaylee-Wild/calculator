@@ -27,13 +27,17 @@ const equal = document.querySelector('#equal');
 
 if (equal) {
   equal.addEventListener('click', (e) => {
-    console.log(displayContainer.innerHTML);
 
+    //this will replace the displayContainer with the equation calculated
     let results = displayContainer.innerHTML
+    
+    //currently only works with plus or minus equations
+    displayContainer.innerHTML = displayContainer.innerHTML.replace(displayContainer.innerHTML, eval(results))
+    
   })
 }
 
-console.log("2 x 3")
+
 
 
 const clearAll = document.querySelector('#clear')
@@ -42,6 +46,7 @@ if (clearAll) {
   clearAll.addEventListener('click', (e) => {
     /*when C is pressed, don't print, clear the display*/
     displayContainer.innerHTML = displayContainer.innerHTML.replace(displayContainer.innerHTML, '');
+    
   });
 }
 
