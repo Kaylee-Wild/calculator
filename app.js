@@ -1,8 +1,7 @@
 window.onload = function() {
 
 
-/*when button is pressed, value is printed in display
-need to get the value to be saved to the full equation*/
+/*when button is pressed, value is printed in display*/
 const displayContainer = document.getElementById('display')
 
 document.querySelectorAll('button:not(#equal,#clear,#del,#sign)').forEach((item) => {
@@ -52,8 +51,20 @@ if (clearAll) {
 
 
 
-/*when +/- is pressed, switch the sign of the constant*/
 
+const sign = document.querySelector("#sign");
+
+if (sign) {
+  sign.addEventListener('click', (e) => {
+  /*when +/- is pressed, switch the sign of the constant*/
+
+  /*need to first split the string > insert - or remove - > join string together again*/
+  /*with the string constantly changing,
+  the sign needs to use the index that comes before the constant*/
+  
+
+  });
+}
 
 
 
@@ -62,11 +73,9 @@ if (clearAll) {
 
 /*when () is pressed, will be a bit trickier
 
-left parenthesis needs to be printed and added the full equation first
-but it needs to only be on the left side of the constant
+left parenthesis needs to be printed on the left side of the constant
 
-right parenthesis needs to be printed and added to the full equation
-and only be on the right side of the constant
+right parenthesis needs to be printed on the right side of the constant
 
 will likely need to add in some way to move left and right in the
 display to add more than one parenthesis inside each other and so on
