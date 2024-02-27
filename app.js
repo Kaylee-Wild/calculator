@@ -57,7 +57,13 @@ const sign = document.querySelector("#sign");
 if (sign) {
   sign.addEventListener('click', (e) => {
   /*when +/- is pressed, switch the sign of the constant*/
-  displayContainer.innerHTML = -Math.abs(displayContainer.innerHTML);
+  
+  if (displayContainer.innerHTML != -Math.abs(displayContainer.innerHTML)) {
+    displayContainer.innerHTML = -Math.abs(displayContainer.innerHTML);
+  } else if (displayContainer.innerHTML == -Math.abs(displayContainer.innerHTML)) {
+    displayContainer.innerHTML = Math.abs(displayContainer.innerHTML);
+  }
+  
   
 
   });
