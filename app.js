@@ -57,19 +57,18 @@ const sign = document.querySelector("#sign");
 if (sign) {
   sign.addEventListener('click', (e) => {
   /*when +/- is pressed, switch the sign of the constant*/
-
-  /*need to first split the string > insert - or remove - > join string together again*/
-  /*with the string constantly changing,
-  the sign needs to use the index that comes before the constant*/
+  displayContainer.innerHTML = -Math.abs(displayContainer.innerHTML);
   
 
   });
 }
 
 
+function neg(num) {
+  return -Math.abs(num);
+}
 
-
-
+console.log(neg(9));
 
 /*when () is pressed, will be a bit trickier
 
