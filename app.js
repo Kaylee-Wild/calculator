@@ -4,7 +4,7 @@ window.onload = function() {
 /*when button is pressed, value is printed in display*/
 const displayContainer = document.getElementById('display')
 
-document.querySelectorAll('button:not(#equal,#clear,#del,#sign)').forEach((item) => {
+document.querySelectorAll('button:not(#equal,#clear,#del,#sign,#parenthesis)').forEach((item) => {
   item.addEventListener('click', (e) => {
     displayContainer.innerHTML += e.target.textContent.trim();
   })
@@ -64,29 +64,36 @@ if (sign) {
     displayContainer.innerHTML = Math.abs(displayContainer.innerHTML);
   }
   
-  
+  //will need to get parenthesis added if there is an operator before the most recent constant
 
   });
 }
 
 
-function neg(num) {
-  return -Math.abs(num);
-}
 
-console.log(neg(9));
 
 /*when () is pressed, will be a bit trickier
 
 left parenthesis needs to be printed on the left side of the constant
 
-right parenthesis needs to be printed on the right side of the constant
+right parenthesis needs to be printed on the right side of the constant*/
 
-will likely need to add in some way to move left and right in the
-display to add more than one parenthesis inside each other and so on
+const parenthesis = document.querySelector("#parenthesis");
 
-e.g. ((85x2)+3)
-*/
+if (parenthesis) {
+  parenthesis.addEventListener('click', (e) => {
+
+    if (parenthesis.innerHTML === '()') {
+      if(/\w*\d{1,}\w*/g.test(assigned)) {
+        parenthesis = ')';
+      } else {
+        parenthesis.innerHTML = '(';
+      }
+    }
+
+
+  })
+}
 
 
 
