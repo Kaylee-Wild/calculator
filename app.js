@@ -4,9 +4,10 @@ window.onload = function() {
 /*when button is pressed, value is printed in display*/
 const displayContainer = document.getElementById('display')
 
-document.querySelectorAll('button:not(#equal,#clear,#del,#sign,#parenthesis)').forEach((item) => {
+document.querySelectorAll('button:not(#equal,#clear,#del,#sign)').forEach((item) => {
   item.addEventListener('click', (e) => {
     displayContainer.innerHTML += e.target.textContent.trim();
+    
   })
 })
 
@@ -69,35 +70,32 @@ if (sign) {
   });
 }
 
-
-
-
-/*when () is pressed, will be a bit trickier
-
-left parenthesis needs to be printed on the left side of the constant
-
-right parenthesis needs to be printed on the right side of the constant*/
-
-const parenthesis = document.querySelector("#parenthesis");
-
 if (parenthesis) {
   parenthesis.addEventListener('click', (e) => {
 
+    //can try and use lastIndexOf() for this
+    //if last space contains +, -, *, %, or /, use (
+    //if the displayContainer DOES NOT have anything, use (
+      if (displayContainer.innerHTML == '' || displayContainer.innerHTML.lastIndexOf == '+' || '-' || '*' || '/' || '%') {
+        displayContainer.innerHTML += '(';
+      }
+
+  
+      //if last space DOES NOT contain +, -, *, %, or /, use )
+    
+
+/*
+    //this is making the button icon change too, i don't want that
     if (parenthesis.innerHTML === '()') {
-      if(/\w*\d{1,}\w*/g.test(assigned)) {
-        parenthesis = ')';
+      if(/\w\d{1,}\w/g.test(parenthesis)) {
+        parenthesis.innerHTML = ')';
       } else {
         parenthesis.innerHTML = '(';
       }
-    }
+    }*/
 
 
   })
 }
-
-
-
-
-
 
 }
