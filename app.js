@@ -4,7 +4,7 @@ window.onload = function() {
 /*when button is pressed, value is printed in display*/
 const displayContainer = document.getElementById('display')
 
-document.querySelectorAll('button:not(#equal,#clear,#del,#sign)').forEach((item) => {
+document.querySelectorAll('button:not(#equal,#clear,#del,#sign,#parenthesis)').forEach((item) => {
   item.addEventListener('click', (e) => {
     displayContainer.innerHTML += e.target.textContent.trim();
     
@@ -70,6 +70,8 @@ if (sign) {
   });
 }
 
+const parenthesis = document.querySelector("#parenthesis");
+
 if (parenthesis) {
   parenthesis.addEventListener('click', (e) => {
 
@@ -78,6 +80,8 @@ if (parenthesis) {
     //if the displayContainer DOES NOT have anything, use (
       if (displayContainer.innerHTML == '' || displayContainer.innerHTML.lastIndexOf == '+' || '-' || '*' || '/' || '%') {
         displayContainer.innerHTML += '(';
+      } else if (displayContainer.innerHTML.lastIndexOf == '0', '1', '2', '3', '4', '5', '6', '7', '8', '9') {
+        displayContainer.innerHTML += ')';
       }
 
   
