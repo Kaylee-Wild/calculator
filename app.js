@@ -1,6 +1,5 @@
 window.onload = function() {
 
-
 /*when button is pressed, value is printed in display*/
 const displayContainer = document.getElementById('display')
 
@@ -74,32 +73,21 @@ const parenthesis = document.querySelector("#parenthesis");
 
 if (parenthesis) {
   parenthesis.addEventListener('click', (e) => {
+    let operators = ['+', '-', '*', '/', '%'];
+    let lastChar = displayContainer.innerHTML.charAt(displayContainer.innerHTML.length - 1);
 
-    //can try and use lastIndexOf() for this
-    //if last space contains +, -, *, %, or /, use (
-    //if the displayContainer DOES NOT have anything, use (
-      if (displayContainer.innerHTML == '' || displayContainer.innerHTML.lastIndexOf == '+' || '-' || '*' || '/' || '%') {
-        displayContainer.innerHTML += '(';
-      } else if (displayContainer.innerHTML.lastIndexOf == '0', '1', '2', '3', '4', '5', '6', '7', '8', '9') {
-        displayContainer.innerHTML += ')';
-      }
-
+    //if the last character in the display is empty or contains a character from the operators array, use (
+    if (operators.includes(lastChar)) {
+      displayContainer.innerHTML += '(';
+    } else if (lastChar === '') {
+      displayContainer.innerHTML += '(';
+      //otherwise use )
+    } else {
+      displayContainer.innerHTML += ')';
+    }
   
-      //if last space DOES NOT contain +, -, *, %, or /, use )
     
-
-/*
-    //this is making the button icon change too, i don't want that
-    if (parenthesis.innerHTML === '()') {
-      if(/\w\d{1,}\w/g.test(parenthesis)) {
-        parenthesis.innerHTML = ')';
-      } else {
-        parenthesis.innerHTML = '(';
-      }
-    }*/
-
-
-  })
+  });
 }
 
 }
