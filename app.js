@@ -56,13 +56,18 @@ const sign = document.querySelector("#sign");
 
 if (sign) {
   sign.addEventListener('click', (e) => {
-  /*when +/- is pressed, switch the sign of the constant*/
+  /*when +/- is pressed, switch the sign of the most recent constant*/
+
+  //num is equal to the most recent set of numbers in the displayContainer
   
-  if (displayContainer.innerHTML != -Math.abs(displayContainer.innerHTML)) {
+  
+  /*
+  if (num != -Math.abs(num)) {
     displayContainer.innerHTML = -Math.abs(displayContainer.innerHTML);
-  } else if (displayContainer.innerHTML == -Math.abs(displayContainer.innerHTML)) {
+  } else if (num == -Math.abs(num)) {
     displayContainer.innerHTML = Math.abs(displayContainer.innerHTML);
   }
+  */
   
   //will need to get parenthesis added if there is an operator before the most recent constant
 
@@ -81,7 +86,9 @@ if (parenthesis) {
       displayContainer.innerHTML += '(';
     } else if (lastChar === '') {
       displayContainer.innerHTML += '(';
-      //otherwise use )
+      //otherwise use
+    } else if (lastChar === ')') {
+      displayContainer.innerHTML += '*('
     } else {
       displayContainer.innerHTML += ')';
     }
