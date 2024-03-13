@@ -58,7 +58,21 @@ if (sign) {
   sign.addEventListener('click', (e) => {
   /*when +/- is pressed, switch the sign of the most recent constant*/
 
-  //num is equal to the most recent set of numbers in the displayContainer
+  //make num equal to all characters in the string up until an operator is reached starting at the lastIndexOf
+  function getLastNumber(display) {
+    const content = document.getElementById(display).innerHTML;
+//get the last set of numbers in the string    
+    const regex = /(\d+)$/;
+
+    const match = content.match(regex);
+
+//if found return found number otherwise return null    
+    return match ? match[0] : null;
+  }
+
+//display into the console what was found getLastNumber  
+  const lastNumber = getLastNumber('display');
+  console.log(lastNumber);
   
   
   /*
