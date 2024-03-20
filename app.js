@@ -58,33 +58,43 @@ if (sign) {
   sign.addEventListener('click', (e) => {
   /*when +/- is pressed, switch the sign of the most recent constant*/
   
-  //get the last set of numbers in the string 
+  
  
   
 
-  
-  function getLastNumber(display) {
+  //get the last positive number in a string
+  function getLastPosNumber(display) {
     const content = document.getElementById(display).innerHTML;    
     const regex = /(\d+)$/;
     const match = content.match(regex);
     return match ? match[0] : null;
   }
 
-  const lastNumber = getLastNumber('display');
-  console.log(lastNumber);
+  const lastPosNumber = getLastPosNumber('display');
+  
 
-
-//next, need to make the last set of numbers found with getLastNumber to switch between negative and positive
-
-//search backwards in the index up until an operator is found to get the last number
-
-//replace that last number with its negative version
-  if (displayContainer.innerHTML != -Math.abs(displayContainer.innerHTML)) {
-  displayContainer.innerHTML = displayContainer.innerHTML.replace(lastNumber, -Math.abs(lastNumber));
-
-  } else if (displayContainer.innerHTML == -Math.abs(displayContainer.innerHTML)) {
-    
+  function getLastNegNumber(display) {
+    const content = document.getElementById(display).innerHTML;
+    //get all characters up until -
+    const regex = /-.*$/;
+    const match = content.match(regex);
+    return match ? match[0] : null;
   }
+
+  const lastNegNumber = getLastNegNumber('display');
+  
+
+
+  //next, need to make the last set of numbers found  to switch between negative and positive
+
+  
+  
+  
+  
+  /*if (lastNegNumber == -Math.abs(displayContainer.innerHTML)) {
+  displayContainer.innerHTML = displayContainer.innerHTML.replace(lastNegNumber, Math.abs(lastNegNumber));
+
+  } */
 
   
   /*
