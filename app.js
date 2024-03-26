@@ -66,16 +66,19 @@ if (sign) {
   }
  
   let lastNumber = getLastNumber('display');
-  
+  console.log(lastNumber);
 
-  //next, need to make the last set of numbers found  to switch between negative and positive
+  //next, need to make the last set of numbers found to switch between negative and positive
 
   if (lastNumber > 0) {
+    //slice lastNumber from displayContainer and replace with -lastNumber
+    displayContainer.innerHTML = displayContainer.innerHTML.replace(lastNumber, -Math.abs(lastNumber));
     
+    //displayContainer.innerHTML = displayContainer.innerHTML.slice(0, lastNumber);
     
   } else if (lastNumber < 0) {
-    
-    
+    //slice lastNumber from displayContainer and replace with +lastNumber
+    displayContainer.innerHTML = displayContainer.innerHTML.replace(lastNumber, Math.abs(lastNumber));
   }
   
   
